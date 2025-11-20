@@ -12,6 +12,21 @@ const funnyWords = [
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [prevCount, setPrevCount] = useState(0);
+
+  // Show increment animation
+  const showIncrementAnimation = (difference) => {
+    const counterDisplay = document.querySelector('.counter-display');
+    if (!counterDisplay) return;
+
+    const incrementText = document.createElement('div');
+    incrementText.className = 'increment-animation';
+    incrementText.textContent = `+${difference}`;
+
+    counterDisplay.appendChild(incrementText);
+
+    setTimeout(() => incrementText.remove(), 2000);
+  };
 
   // Fetch counter initially + refresh every 1.5s so it stays in sync with others
   useEffect(() => {
@@ -19,6 +34,13 @@ export default function Home() {
       try {
         const res = await fetch("/api/counter");
         const data = await res.json();
+        
+        if (prevCount > 0 && data.value > prevCount) {
+          const difference = data.value - prevCount;
+          showIncrementAnimation(difference);
+        }
+        
+        setPrevCount(data.value);
         setCount(data.value);
       } catch (e) {
         console.error("Failed to fetch counter", e);
@@ -29,7 +51,7 @@ export default function Home() {
     const interval = setInterval(fetchCounter, 1500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [prevCount]);
 
   const spawnFlyingText = () => {
     const text = document.createElement("div");
@@ -66,6 +88,13 @@ export default function Home() {
     try {
       const res = await fetch("/api/counter", { method: "POST" });
       const data = await res.json();
+      
+      const difference = data.value - count;
+      if (difference > 0) {
+        showIncrementAnimation(difference);
+      }
+      
+      setPrevCount(data.value);
       setCount(data.value);
     } catch (e) {
       console.error("Failed to increment counter", e);
@@ -288,6 +317,7 @@ export default function Home() {
 
 
           .counter-display {
+            position: relative;
             text-align: center;
             margin-bottom: 50px;
             padding: 30px;
@@ -535,6 +565,29 @@ export default function Home() {
           .github-icon {
             width: 20px;
             height: 20px;
+          }
+
+          .increment-animation {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: 32px;
+            font-weight: 900;
+            color: #22c55e;
+            animation: incrementFloat 2s ease-out forwards;
+            pointer-events: none;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+          }
+
+          @keyframes incrementFloat {
+            0% {
+              opacity: 1;
+              transform: translateY(-50%) scale(1);
+            }
+            100% {
+              opacity: 0;
+              transform: translateY(-100px) scale(1.2);
+            }
           }
 
           .flying-text {
