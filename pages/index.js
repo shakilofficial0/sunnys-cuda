@@ -28,6 +28,65 @@ export default function Home() {
     setTimeout(() => incrementText.remove(), 2000);
   };
 
+  // Trigger confetti celebration
+  const triggerConfetti = () => {
+    const colors = ['#818cf8', '#a855f7', '#22c55e', '#f59e0b', '#ec4899'];
+    const confettiCount = 50;
+
+    // Left side confetti
+    for (let i = 0; i < confettiCount; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = '0px';
+        confetti.style.top = Math.random() * window.innerHeight / 2 + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.setProperty('--tx', Math.random() * 300 + 200 + 'px');
+        confetti.style.setProperty('--ty', Math.random() * 400 - 200 + 'px');
+        confetti.style.setProperty('--r', Math.random() * 720 + 'deg');
+        confetti.style.animationDelay = Math.random() * 0.3 + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+      }, i * 10);
+    }
+
+    // Right side confetti
+    for (let i = 0; i < confettiCount; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = window.innerWidth + 'px';
+        confetti.style.top = Math.random() * window.innerHeight / 2 + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.setProperty('--tx', -(Math.random() * 300 + 200) + 'px');
+        confetti.style.setProperty('--ty', Math.random() * 400 - 200 + 'px');
+        confetti.style.setProperty('--r', Math.random() * 720 + 'deg');
+        confetti.style.animationDelay = Math.random() * 0.3 + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+      }, i * 10);
+    }
+  };
+
+  // Check if milestone reached
+  const checkMilestone = (newValue) => {
+    const currentHundred = Math.floor(newValue / 100);
+    const previousHundred = Math.floor(prevCount / 100);
+    
+    if (currentHundred > previousHundred && newValue % 100 >= 0 && newValue % 100 <= 5) {
+      triggerConfetti();
+      // Wait 400ms before showing milestone alert
+      setTimeout(() => {
+        triggerConfetti();
+      }, 400);
+
+      setTimeout(() => {
+        triggerConfetti();
+      }, 400);
+
+    }
+  };
+
   // Fetch counter initially + refresh every 1.5s so it stays in sync with others
   useEffect(() => {
     const fetchCounter = async () => {
@@ -40,6 +99,7 @@ export default function Home() {
           showIncrementAnimation(difference);
         }
         
+        checkMilestone(data.value);
         setPrevCount(data.value);
         setCount(data.value);
       } catch (e) {
@@ -94,6 +154,7 @@ export default function Home() {
         showIncrementAnimation(difference);
       }
       
+      checkMilestone(data.value);
       setPrevCount(data.value);
       setCount(data.value);
     } catch (e) {
@@ -587,6 +648,26 @@ export default function Home() {
             100% {
               opacity: 0;
               transform: translateY(-100px) scale(1.2);
+            }
+          }
+
+          .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            z-index: 10001;
+            animation: confettiFall 3s ease-out forwards;
+          }
+
+          @keyframes confettiFall {
+            0% {
+              opacity: 1;
+              transform: translate(0, 0) rotate(0deg);
+            }
+            100% {
+              opacity: 0;
+              transform: translate(var(--tx), var(--ty)) rotate(var(--r));
             }
           }
 
