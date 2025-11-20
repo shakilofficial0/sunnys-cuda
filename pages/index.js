@@ -114,7 +114,7 @@ export default function Home() {
             onClick={handleClick}
           >
             <span className="button-glow"></span>
-            ⚡ FIRE THE COUNTER ⚡
+            ⚡ Sunny Cudi⚡
           </button>
 
           <div className="story-section">
