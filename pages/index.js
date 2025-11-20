@@ -90,6 +90,7 @@ export default function Home() {
         <meta name="twitter:title" content="Sunny Global Cuda Counter" />
         <meta name="twitter:description" content="A digital memorial counting the betrayals of Saimon Hasan Sunny. Click to add yours!" />
         <meta name="twitter:image" content="/meta.png" />
+        <meta name="google-site-verification" content="LjDh7QDrTu_pC2yBVo9dMr2TUMqpH_YYfoOnD48Eeto" />
         
         {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
