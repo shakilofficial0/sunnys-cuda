@@ -83,13 +83,13 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Sunny Global Cuda Counter - The Legend of the Traitor" />
         <meta property="og:description" content="A digital memorial counting the betrayals of Saimon Hasan Sunny. Join thousands in expressing disappointment!" />
-        <meta property="og:image" content="https://lh3.googleusercontent.com/rd-gg-dl/ABS2GSnbW6gxw_KYktQiM21buA8q5FdGej0RclCT0BGZZAlfNTye9VG2gS6MK81EZk2anX7-QtF_hca8JEMxYgs-M8aKcECAelpWQPcY-nGuNORWvwxsL49TQT85N2PKrRH-wzYeMIXDTmy5eru98jWJyFMw6VcmYQZH45Uo5OHpdry7jMkzVbuFABAeJuW8bT1CW6ougeuDvs6pW3FcH_w0_3i2JCF3r8zIjzN8-YTuiyS9W-9oDaufOaT_SL3C8Mp2h4klE0UBNa9xfgMeH-NHLcsZ8yI5zKSjrmjmnQhw9j2NCVjzncGkdo28DOU4tF3jGiI29gnHXvAkuncDmzOpVFEDiBWun1FdNcLamMw3_IY47t6Qt_3YnkyJ8AI12Cl9NLLihihlwV28c0z7Poi-uY0xkaugPD_F_eBYvnTqP4YWXe0jiX5TN8QlGS6R68F9-0-Ib5NovafqJU9zfpjW9umhojyo03BTF-8AT5CLZ90_FEgj11Kf1vNU-0WikFhPkZsU_u9XTCzjG5Y0UWvm2NVpmhtKmV4XcfXkCHUBLzk9HTz2lk6PnABevmTNQTbCe2iQEVHooalNJQa_GqUhlZIMwt5mn8ZG_ywKQolHspoqxnhaQxnYbc72LgEAuICkiIx9G7ZSdmyk9F4RxxHGVF8nfVK5Fs4DYsjcCfdtfUM7i4ed6IqBjtc1O3bo6d-UyJ8RYSq6DX5V8A5V8Gc2wi_C-JKfp24Vo6GNVvt5oiPbAXUsV3vD8-etUXlGU9b38ocT1PfBKqyXMN_JaIMn_Sds25U-tYkCA0sRqzKQlkrhIqmzJra4kJzrwQJG_dAvetaJ2FpzAylxUVvI6bNMcQkd2ELb4YV1cSXES4XHWsdvyh3NSeXYUSEyNwMaRKahqXt8UTOlK1JB-sIwfpEFLhoHZdjtIs8JfvBWqhU-4dH2cYTB8HLdlL5dHx8bRDz1nGbuI60KEpLTG0HUcRChFwoyPT4ZrMcKokHSK7_ZF2KYZFXdcxhmRwScxK7bvugotTFulY4J9oiQC52C5wqJoxKJtvQ2TA43uUHBOpON8aeNZFex2bdwHcRDoaDOFIH2zVozKJixJmY_cXTVH7rN-y03yQIbOWrv8VROYo_YQjeplfY_RH7jk5G9RYg1npTS1F2fte4gax6DbFwPFYgnGUYKa4-WCxOZ7Un6llUdV6udyGiQtE1YzNpbNnRXvPQoHPHwHE1n1XL-yl-_vTP9TTHghsMWJoCCKhYjMOcoXTi188hwfYmDqriq56lU1VzA2CtL_WuwoItt93aGDoPXF1PcTimQ3jEwFjWmaX_GFDYWp4y_ILmfw4c3mG3DRYs=s1024-rj" />
+        <meta property="og:image" content="/meta.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sunny Global Cuda Counter" />
         <meta name="twitter:description" content="A digital memorial counting the betrayals of Saimon Hasan Sunny. Click to add yours!" />
-        <meta name="twitter:image" content="https://lh3.googleusercontent.com/rd-gg-dl/ABS2GSnbW6gxw_KYktQiM21buA8q5FdGej0RclCT0BGZZAlfNTye9VG2gS6MK81EZk2anX7-QtF_hca8JEMxYgs-M8aKcECAelpWQPcY-nGuNORWvwxsL49TQT85N2PKrRH-wzYeMIXDTmy5eru98jWJyFMw6VcmYQZH45Uo5OHpdry7jMkzVbuFABAeJuW8bT1CW6ougeuDvs6pW3FcH_w0_3i2JCF3r8zIjzN8-YTuiyS9W-9oDaufOaT_SL3C8Mp2h4klE0UBNa9xfgMeH-NHLcsZ8yI5zKSjrmjmnQhw9j2NCVjzncGkdo28DOU4tF3jGiI29gnHXvAkuncDmzOpVFEDiBWun1FdNcLamMw3_IY47t6Qt_3YnkyJ8AI12Cl9NLLihihlwV28c0z7Poi-uY0xkaugPD_F_eBYvnTqP4YWXe0jiX5TN8QlGS6R68F9-0-Ib5NovafqJU9zfpjW9umhojyo03BTF-8AT5CLZ90_FEgj11Kf1vNU-0WikFhPkZsU_u9XTCzjG5Y0UWvm2NVpmhtKmV4XcfXkCHUBLzk9HTz2lk6PnABevmTNQTbCe2iQEVHooalNJQa_GqUhlZIMwt5mn8ZG_ywKQolHspoqxnhaQxnYbc72LgEAuICkiIx9G7ZSdmyk9F4RxxHGVF8nfVK5Fs4DYsjcCfdtfUM7i4ed6IqBjtc1O3bo6d-UyJ8RYSq6DX5V8A5V8Gc2wi_C-JKfp24Vo6GNVvt5oiPbAXUsV3vD8-etUXlGU9b38ocT1PfBKqyXMN_JaIMn_Sds25U-tYkCA0sRqzKQlkrhIqmzJra4kJzrwQJG_dAvetaJ2FpzAylxUVvI6bNMcQkd2ELb4YV1cSXES4XHWsdvyh3NSeXYUSEyNwMaRKahqXt8UTOlK1JB-sIwfpEFLhoHZdjtIs8JfvBWqhU-4dH2cYTB8HLdlL5dHx8bRDz1nGbuI60KEpLTG0HUcRChFwoyPT4ZrMcKokHSK7_ZF2KYZFXdcxhmRwScxK7bvugotTFulY4J9oiQC52C5wqJoxKJtvQ2TA43uUHBOpON8aeNZFex2bdwHcRDoaDOFIH2zVozKJixJmY_cXTVH7rN-y03yQIbOWrv8VROYo_YQjeplfY_RH7jk5G9RYg1npTS1F2fte4gax6DbFwPFYgnGUYKa4-WCxOZ7Un6llUdV6udyGiQtE1YzNpbNnRXvPQoHPHwHE1n1XL-yl-_vTP9TTHghsMWJoCCKhYjMOcoXTi188hwfYmDqriq56lU1VzA2CtL_WuwoItt93aGDoPXF1PcTimQ3jEwFjWmaX_GFDYWp4y_ILmfw4c3mG3DRYs=s1024-rj" />
+        <meta name="twitter:image" content="/meta.png" />
         
         {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -118,7 +118,7 @@ export default function Home() {
           </button>
 
           <div className="story-section">
-            <h2 className="story-title">📖 The Legend of Sunny</h2>
+            <h2 className="story-title">📖 The Legendary Traitor - Sunny</h2>
             <div className="story-content">
               <p>
                 In the annals of friendship and departure, there exists a tale that has become 
